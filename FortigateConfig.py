@@ -9,7 +9,7 @@ class NestedDict(dict):
             dic[key] = {}
         return self.add_nested_key(dic[key], keys[1:])
 
-    def add_nested_value(self, keys: str, value: str):
+    def add_nested_value(self, keys: list, value: str):
         for key in keys:
             self = self[key]
         config_item, value = FortinetConfig.parse_set_command_into_value(value)
